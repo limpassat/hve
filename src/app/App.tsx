@@ -1,13 +1,17 @@
-import React from "react";
+import React, { FC } from "react";
 import { GlobalStyles } from "./GlobalStyles";
 import { Editor } from "../editor/Editor";
 
 
-export const App = () => {
+type AppProps = {
+  exampleHtml: string;
+};
+
+export const App: FC<AppProps> = ({exampleHtml}) => {
   return (
     <>
       <GlobalStyles />
-      <Editor />
+      <Editor exampleHtml={exampleHtml} />
     </>
   );
 };

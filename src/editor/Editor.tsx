@@ -12,10 +12,10 @@ const editorContextValue: EditorContextType = {
   editorStore: new EditorStore(),
 };
 
-export const Editor = () => {
+export const Editor = ({exampleHtml}) => {
 
   useEffect(() => {
-    editorContextValue.editorStore.init();
+    editorContextValue.editorStore.setHTMLIntoBody(exampleHtml);
   }, []);
 
   return (

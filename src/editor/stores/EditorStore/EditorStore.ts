@@ -3,7 +3,6 @@ import { PropertiesStore } from "../PropertiesStore/PropertiesStore";
 import { CanvasStore } from "../CanvasStore/CanvasStore";
 import { SelectedStore } from "../SelectedStore/SelectedStore";
 import { HTMLResourceService } from "../../services/HTMLResourceService";
-import example from "../../../examples/example.html?raw";
 
 
 export class EditorStore {
@@ -19,10 +18,6 @@ export class EditorStore {
   htmlResourceService = new HTMLResourceService(this);
 
   constructor() {
-  }
-
-  init() {
-    this.setHTMLIntoBody(example);
   }
 
   setHTMLIntoBody(html: string) {
