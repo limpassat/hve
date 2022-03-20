@@ -12,6 +12,7 @@ const Wrapper = styled.button`
   background-color: #eaf8ff;
   margin-left: 5px;
   min-width: 22px;
+  transform: skewX(-14deg);
 `;
 
 export type SwitchVariant = {

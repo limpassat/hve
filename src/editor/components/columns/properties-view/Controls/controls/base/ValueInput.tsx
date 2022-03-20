@@ -10,6 +10,7 @@ const Input = styled.input`
   outline: none;
   width: 100%;
   padding: 0 7px;
+  transform: skewX(-14deg);
   
   &:focus, &:active {
     border-color: #4aa3ff;

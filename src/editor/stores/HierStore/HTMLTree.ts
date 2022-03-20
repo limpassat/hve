@@ -5,7 +5,8 @@ export type TreeItem = {
   node: Node;
   parent: Node;
   parentItem: TreeItem | null;
-  name?: string;
+  name: string;
+  nodeName: string;
   childs?: TreeItem[];
   collapsed: boolean;
   level: number;
@@ -32,7 +33,7 @@ export class HTMLTree {
       this.tree.parentItem = null;
     });
 
-    const walker = document.createTreeWalker(body, NodeFilter.SHOW_ALL);
+    const walker = document.createTreeWalker(body, NodeFilter.FILTER_ACCEPT);
     let nextNode = walker.nextNode();
 
     while (nextNode !== null) {
@@ -54,6 +55,7 @@ export class HTMLTree {
       node: node,
       parent: node.parentNode,
       name: node.nodeName,
+      nodeName: node.nodeName,
       childs: [],
       collapsed: true,
       level: this.getNodeLevel(node),

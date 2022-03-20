@@ -7,6 +7,10 @@ const Button = styled.button`
   cursor: pointer;
   background-color: transparent;
   border: 0;
+  width: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const CollapseButton = observer(({collapsed, onClick}) => {

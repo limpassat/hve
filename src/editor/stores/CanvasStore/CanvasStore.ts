@@ -101,7 +101,7 @@ export class CanvasStore {
 
   onMouseOver(e: MouseEvent) {
     const item = this.editorStore.hierStore.tree.nodeToItemMap.get(e.target as Node);
-    this.editorStore.selectedStore.hoverItem(item);
+    item && this.editorStore.selectedStore.hoverItem(item);
   }
 
   onMouseOut(e: MouseEvent) {
@@ -112,7 +112,7 @@ export class CanvasStore {
     e.stopPropagation();
     this.editorStore.selectedStore.unselect();
     const item = this.editorStore.hierStore.tree.nodeToItemMap.get(e.target as Node);
-    this.editorStore.selectedStore.selectItem(item);
+    item && this.editorStore.selectedStore.selectItem(item);
   }
 
   setHTMLIntoBody(html: string): Promise<void> {

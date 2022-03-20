@@ -3,9 +3,11 @@ import { Wrapper } from "./Wrapper";
 import { observer } from "mobx-react";
 import { TreeItem } from "../../../../stores/HierStore/HTMLTree";
 import { EditorContext } from "../../../../EditorContext/EditorContext";
-import { Name } from "../Name";
+import { Name, NameWrapper } from "../Name";
 import { CollapseButton } from "./CollapseButton";
 import { action } from "mobx";
+import { generateHSLInDiapason } from "../../../ui/utils/color/generateHSL";
+import { NodeNameRandomColor } from "../../../ui/utils/color/NodeNameRandomColor";
 
 
 type HierItemProps = {
@@ -35,25 +37,29 @@ export const HierItem: FC<HierItemProps> = observer(({item, setRef}) => {
     selectedStore.selectItem(item);
   }, []);
 
+  const hsl = NodeNameRandomColor.get(item.nodeName);
+
   return (
     <Wrapper ref={ref => setRef(ref, item)}>
-      <Name level={item.level}
-            hovered={item.node === selectedStore.hoveredItem?.node}
-            onClick={onNameClick}
-            selected={item.node === selectedStore.selectedItem?.node}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-            title={item.name}
+      <NameWrapper level={item.level}
+                   hovered={item.node === selectedStore.hoveredItem?.node}
+                   onClick={onNameClick}
+                   selected={item.node === selectedStore.selectedItem?.node}
+                   onMouseEnter={onMouseEnter}
+                   onMouseLeave={onMouseLeave}
+                   title={item.name}
       >
         {!!item.childs.length && (
           <CollapseButton collapsed={item.collapsed}
                           onClick={toggleCollapse}
           />
         )}
-        <span className={"hier-item-name"}>
+        <Name className={"hier-item-name"}
+              hsl={hsl}
+        >
           {item.name}
-        </span>
-      </Name>
+        </Name>
+      </NameWrapper>
       {!item.collapsed && item.childs.map((item, index) => {
         return (
           <HierItem item={item}
