@@ -5,11 +5,11 @@ import { ControlTitle } from "./base/ControlTitle";
 import { Select } from "./base/Select";
 import { ValueInput } from "./base/ValueInput";
 import { ControlBody } from "./base/ControlBody";
-import { useWidthControl } from "../hooks/useWidthControl";
+import { useLikeWidthControl } from "../hooks/useLikeWidthControl";
 import { widthUnits } from "../../utils/parseWidthUnit";
 
 
-export const WidthControl = observer(({cssProp}) => {
+export const LikeWidthControl = observer(({cssProp}) => {
 
   const {
     unit,
@@ -17,7 +17,7 @@ export const WidthControl = observer(({cssProp}) => {
     onChangeInput,
     onChangeUnit,
     onKeyDown
-  } = useWidthControl(cssProp);
+  } = useLikeWidthControl(cssProp);
 
   return (
     <ControlWrapper>

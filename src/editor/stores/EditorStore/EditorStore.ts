@@ -5,6 +5,7 @@ import { SelectedStore } from "../SelectedStore/SelectedStore";
 import { HTMLResourceService } from "../../services/HTMLResourceService";
 import example from "../../../examples/example.html?raw";
 
+
 export class EditorStore {
 
   selectedStore = new SelectedStore();

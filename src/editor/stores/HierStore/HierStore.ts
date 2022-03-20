@@ -1,6 +1,6 @@
 import { EditorStore } from "../EditorStore/EditorStore";
 import { HTMLTree, TreeItem } from "./HTMLTree";
-import { action, reaction, runInAction } from "mobx";
+import { reaction, runInAction } from "mobx";
 
 
 export class HierStore {

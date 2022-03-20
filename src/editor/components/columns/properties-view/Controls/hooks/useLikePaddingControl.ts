@@ -8,7 +8,7 @@ import { withoutWidthUnit } from "../../utils/withoutWidthUnit";
 import { parseWidthUnit } from "../../utils/parseWidthUnit";
 
 
-export const usePaddingControl = (cssProp) => {
+export const useLikePaddingControl = (cssProp) => {
 
   const {editorStore: {propertiesStore}} = useContext(EditorContext);
 

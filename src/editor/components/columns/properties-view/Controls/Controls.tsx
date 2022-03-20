@@ -2,11 +2,11 @@ import { observer } from "mobx-react";
 import React, { useContext } from "react";
 import { EditorContext } from "../../../../EditorContext/EditorContext";
 import { Wrapper } from "./Wrapper";
-import { WidthControl } from "./controls/WidthControl";
+import { LikeWidthControl } from "./controls/LikeWidthControl";
 import { ControlsContext } from "./ControlsContext";
 import { SelectPopup } from "./controls/base/SelectPopup";
 import { usePopup } from "./hooks/usePopup";
-import { PaddingControl } from "./controls/PaddingControl";
+import { LikePaddingControl } from "./controls/LikePaddingControl";
 
 
 const likeWidthCssProps = [
@@ -45,15 +45,15 @@ export const Controls = observer(() => {
       <Wrapper>
         {likeWidthCssProps.map(cssProp => {
           return (
-            <WidthControl cssProp={cssProp}
-                          key={cssProp}
+            <LikeWidthControl cssProp={cssProp}
+                              key={cssProp}
             />
           );
         })}
         {likePaddingCssProps.map(cssProp => {
           return (
-            <PaddingControl cssProp={cssProp}
-                            key={cssProp}
+            <LikePaddingControl cssProp={cssProp}
+                                key={cssProp}
             />
           );
         })}

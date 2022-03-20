@@ -2,13 +2,14 @@ import React, { FC, useCallback, useContext, useRef } from "react";
 import styled from "styled-components";
 import { observer } from "mobx-react";
 import { ControlsContext } from "../../ControlsContext";
+import { WidthUnit } from "../../../utils/parseWidthUnit";
 
 
-export type Option = string;
+export type Option = WidthUnit;
 
 type SelectProps = {
   value: Option;
-  options: Option[];
+  options: ReadonlyArray<Option>;
   onChange: (opt: Option) => void;
 };
 

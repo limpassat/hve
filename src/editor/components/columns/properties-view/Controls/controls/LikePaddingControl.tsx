@@ -6,7 +6,7 @@ import React from "react";
 import { SwitchButton, SwitchVariant } from "./base/SwitchButton";
 import { observer } from "mobx-react";
 import { LineGrid } from "./base/LineGrid";
-import { usePaddingControl } from "../hooks/usePaddingControl";
+import { useLikePaddingControl } from "../hooks/useLikePaddingControl";
 
 
 const switchVariants: SwitchVariant[] = [
@@ -16,7 +16,7 @@ const switchVariants: SwitchVariant[] = [
 ];
 
 
-export const PaddingControl = observer(({cssProp}) => {
+export const LikePaddingControl = observer(({cssProp}) => {
 
   const {
     value,
@@ -28,7 +28,7 @@ export const PaddingControl = observer(({cssProp}) => {
     changeHandValue,
     changeQuarterValue,
     onKeyDown
-  } = usePaddingControl(cssProp);
+  } = useLikePaddingControl(cssProp);
 
   return (
     <ControlWrapper>

@@ -1,4 +1,4 @@
-import React, { FC, forwardRef, useCallback, useContext } from "react";
+import React, { FC, useCallback, useContext } from "react";
 import { Wrapper } from "./Wrapper";
 import { observer } from "mobx-react";
 import { TreeItem } from "../../../../stores/HierStore/HTMLTree";
@@ -6,7 +6,6 @@ import { EditorContext } from "../../../../EditorContext/EditorContext";
 import { Name, NameWrapper } from "../Name";
 import { CollapseButton } from "./CollapseButton";
 import { action } from "mobx";
-import { generateHSLInDiapason } from "../../../ui/utils/color/generateHSL";
 import { NodeNameRandomColor } from "../../../ui/utils/color/NodeNameRandomColor";
 
 

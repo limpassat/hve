@@ -5,7 +5,7 @@ import { Option } from "../controls/base/Select";
 import { withoutWidthUnit } from "../../utils/withoutWidthUnit";
 
 
-export const useWidthControl = (cssProp) => {
+export const useLikeWidthControl = (cssProp) => {
 
   const {editorStore: {propertiesStore}} = useContext(EditorContext);
 
