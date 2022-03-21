@@ -5,4 +5,5 @@ export const Wrapper = styled.div`
   cursor: pointer;
   width: max-content;
   min-width: 100%;
+  position: relative;
 `;

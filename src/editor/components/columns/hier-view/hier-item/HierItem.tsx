@@ -3,10 +3,11 @@ import { Wrapper } from "./Wrapper";
 import { observer } from "mobx-react";
 import { TreeItem } from "../../../../stores/HierStore/HTMLTree";
 import { EditorContext } from "../../../../EditorContext/EditorContext";
-import { Name, NameWrapper } from "../Name";
+import { Name, NameWrapper } from "./Name";
 import { CollapseButton } from "./CollapseButton";
 import { action } from "mobx";
 import { NodeNameRandomColor } from "../../../ui/utils/color/NodeNameRandomColor";
+import { HierStick } from "./HierStick";
 
 
 type HierItemProps = {
@@ -38,8 +39,13 @@ export const HierItem: FC<HierItemProps> = observer(({item, setRef}) => {
 
   const hsl = NodeNameRandomColor.get(item.nodeName);
 
+  const showStick = !!item.childs?.length && !item.collapsed;
+
   return (
     <Wrapper ref={ref => setRef(ref, item)}>
+      {showStick && (
+        <HierStick level={item.level} />
+      )}
       <NameWrapper level={item.level}
                    hovered={item.node === selectedStore.hoveredItem?.node}
                    onClick={onNameClick}
